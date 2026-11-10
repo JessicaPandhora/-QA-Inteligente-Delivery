@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Inteligente - Delivery</title>
+</head>
+<body>
+    <h1>Delivery - QA Inteligente</h1>
+
+    <section>
+        <h2>Hambúrguer</h2>
+        <p>Preço: R$ 25,00</p>
+        <button id="adicionar">Adicionar ao carrinho</button>
+    </section>
+
+    <section>
+        <h2>Meu carrinho</h2>
+        <p>Quantidade: <span id="quantidade">0</span></p>
+        <p>Total: R$ <span id="total">0.00</span></p>
+        <button id="finalizar">Finalizar pedido</button>
+        <p id="mensagem"></p>
+    </section>
+
+    <script>
+        let quantidade = 0;
+        const preco = 25.00;
+
+        document.getElementById("adicionar").addEventListener("click", function() {
+            quantidade++;
+            document.getElementById("quantidade").textContent = quantidade;
+            document.getElementById("total").textContent = (quantidade * preco).toFixed(2);
+        });
+
+        document.getElementById("finalizar").addEventListener("click", function() {
+            if (quantidade === 0) {
+                document.getElementById("mensagem").textContent = "Adicione um produto antes de finalizar.";
+            } else {
+                document.getElementById("mensagem").textContent = "Pedido realizado com sucesso!";
+            }
+        });
+    </script>
+</body>
+</html>

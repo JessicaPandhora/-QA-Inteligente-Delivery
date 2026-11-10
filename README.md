@@ -3,80 +3,135 @@
 
 ## Sobre o projeto
 
-Este projeto tem como objetivo desenvolver conhecimentos práticos em Quality Assurance (QA), utilizando automação de testes com Python, Pytest e Playwright, além do apoio da Inteligência Artificial na elaboração e documentação dos cenários de teste.
+O QA Inteligente é um projeto de estudo e desenvolvimento de habilidades práticas em Quality Assurance (QA), com foco em testes funcionais, automação de testes e aplicação de Inteligência Artificial como ferramenta de apoio.
 
-O projeto simula operações de um aplicativo de delivery, com foco inicial na funcionalidade de carrinho de compras.
+O projeto utiliza uma aplicação web simulada de delivery, desenvolvida em HTML e JavaScript, para validar funcionalidades de um carrinho de compras.
 
 ## Objetivos
 
 - Desenvolver cenários de testes positivos e negativos.
-- Automatizar testes utilizando Python e Pytest.
-- Explorar ferramentas de automação de testes.
-- Utilizar Inteligência Artificial como apoio ao processo de QA.
-- Documentar resultados e identificar possíveis falhas.
+- Aplicar testes automatizados com Python e Pytest.
+- Automatizar interações com interfaces web utilizando Playwright.
+- Validar comportamentos esperados de uma aplicação.
+- Utilizar Inteligência Artificial como apoio à elaboração e revisão dos testes.
+- Documentar evidências e resultados das execuções.
 
 ## Tecnologias utilizadas
 
 - Python 3.14.2
 - Pytest 9.2.0
 - Playwright 1.65.0
+- Chromium
+- HTML5
+- JavaScript
 - GitHub Codespaces
 - GitHub
 - ChatGPT como ferramenta de apoio com IA.
 
 ## Testes implementados
 
-Atualmente, o projeto possui cinco testes automatizados:
+Atualmente, o projeto possui dez testes automatizados, divididos em duas categorias.
 
-1. Verificação de carrinho inicialmente vazio.
-2. Adição de produto ao carrinho.
-3. Cálculo do total de dois produtos.
-4. Impedimento de pedido com carrinho vazio.
-5. Finalização de pedido com produto.
+### 1. Testes de lógica — Pytest
 
-## Resultados
+Arquivo: `tests/test_carrinho.py`
 
-Primeira execução registrada:
+1. Verificar se o carrinho inicia vazio.
+2. Validar a adição de produtos.
+3. Verificar o cálculo do total de dois produtos.
+4. Impedir a realização de pedidos com carrinho vazio.
+5. Validar a finalização de pedidos com produtos.
 
-- Total de testes: 5
-- Aprovados: 5
-- Reprovados: 0
+### 2. Testes de interface — Playwright
 
-Status: todos os testes passaram na execução realizada.
+Arquivo: `tests/test_interface_delivery.py`
 
-## Execução dos testes
+1. Verificar se a página Delivery abre corretamente.
+2. Validar se o carrinho inicia vazio na interface.
+3. Verificar se a adição de produtos atualiza quantidade e total.
+4. Validar a mensagem apresentada ao tentar finalizar um carrinho vazio.
+5. Verificar a finalização de pedidos com produtos.
 
-Para executar os testes no ambiente Python:
+Os testes de interface utilizam o navegador Chromium para simular interações de usuários com a aplicação.
+
+## Resultados dos testes
+
+Última execução registrada:
+
+- Total de testes executados: 10.
+- Testes aprovados: 10.
+- Testes reprovados: 0.
+- Resultado: 10 passed.
+- Tempo de execução: 8,02 segundos.
+
+**Status: todos os dez testes passaram na execução registrada.**
+
+## Evidências
+
+Os resultados das execuções estão armazenados na pasta `evidencias/`.
+
+Arquivo principal:
+
+`evidencias/execucao_completa_pytest.txt`
+
+## Como executar o projeto
+
+1. Inicie o servidor local da aplicação:
+
+```bash
+python -m http.server 8000 --directory app
+```
+
+2. Em outro terminal, execute os testes:
 
 ```bash
 python -m pytest -v
 ```
 
+Para executar somente os testes de interface:
+
+```bash
+python -m pytest -v tests/test_interface_delivery.py
+```
+
+O servidor local deve permanecer ativo durante a execução dos testes de interface.
+
 ## Estrutura do projeto
 
 ```text
 QA-Inteligente-Delivery/
+│
+├── app/
+│   └── index.html
+│
 ├── documentacao/
+│   └── uso_ia_qualidade_testes.md
+│
 ├── evidencias/
-├── relatorios/
+│   ├── execucao_pytest.txt
+│   └── execucao_completa_pytest.txt
+│
 ├── tests/
-│   └── test_carrinho.py
+│   ├── test_carrinho.py
+│   └── test_interface_delivery.py
+│
+├── .gitignore
 └── README.md
 ```
 
-## Inteligência Artificial no QA
+## Inteligência Artificial aplicada ao QA
 
-A Inteligência Artificial é utilizada como ferramenta de apoio na elaboração de cenários, revisão de scripts, interpretação de resultados e documentação técnica.
+O ChatGPT foi utilizado como ferramenta de apoio durante o desenvolvimento, contribuindo para a elaboração dos cenários, organização dos scripts, revisão das validações e documentação técnica.
 
-Os testes são executados e seus resultados são verificados para garantir que os comportamentos esperados estejam sendo atendidos.
+A execução dos testes e a análise dos resultados foram realizadas no ambiente de desenvolvimento, permitindo verificar os comportamentos implementados.
 
 ## Status do projeto
 
 Em desenvolvimento.
 
-Novas funcionalidades, cenários de testes e melhorias serão incorporados gradualmente.
+Novos cenários, funcionalidades, melhorias e atividades de automação serão incorporados gradualmente.
 
 ---
 
-Projeto desenvolvido para fins de estudo e construção de portfólio profissional em Quality Assurance.
+Projeto desenvolvido para fins de estudo, prática profissional e construção de portfólio em Quality Assurance.
 
