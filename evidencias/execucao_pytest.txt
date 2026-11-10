@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-9.2.0, pluggy-1.7.0 -- /home/codespace/.python/current/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/-QA-Inteligente-Delivery
+plugins: platformdirs-4.14.0, anyio-4.15.1
+collecting ... collected 5 items
+
+tests/test_carrinho.py::test_carrinho_inicia_vazio PASSED                [ 20%]
+tests/test_carrinho.py::test_adicionar_produto PASSED                    [ 40%]
+tests/test_carrinho.py::test_calcular_total_de_dois_produtos PASSED      [ 60%]
+tests/test_carrinho.py::test_impedir_pedido_com_carrinho_vazio PASSED    [ 80%]
+tests/test_carrinho.py::test_finalizar_pedido_com_produto PASSED         [100%]
+
+============================== 5 passed in 4.20s ===============================
