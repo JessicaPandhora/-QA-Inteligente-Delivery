@@ -3,17 +3,34 @@ platform linux -- Python 3.14.2, pytest-9.2.0, pluggy-1.7.0 -- /home/codespace/.
 cachedir: .pytest_cache
 rootdir: /workspaces/-QA-Inteligente-Delivery
 plugins: platformdirs-4.14.0, anyio-4.15.1
-collecting ... collected 10 items
+collecting ... collected 27 items
 
-tests/test_carrinho.py::test_carrinho_inicia_vazio PASSED                [ 10%]
-tests/test_carrinho.py::test_adicionar_produto PASSED                    [ 20%]
-tests/test_carrinho.py::test_calcular_total_de_dois_produtos PASSED      [ 30%]
-tests/test_carrinho.py::test_impedir_pedido_com_carrinho_vazio PASSED    [ 40%]
-tests/test_carrinho.py::test_finalizar_pedido_com_produto PASSED         [ 50%]
-tests/test_interface_delivery.py::test_pagina_delivery_abre_corretamente PASSED [ 60%]
+tests/test_analisador_requisitos.py::test_identificar_termo_vago PASSED  [  3%]
+tests/test_analisador_requisitos.py::test_identificar_requisito_sem_acao PASSED [  7%]
+tests/test_analisador_requisitos.py::test_identificar_requisito_curto PASSED [ 11%]
+tests/test_analisador_requisitos.py::test_requisito_sem_problemas_identificados PASSED [ 14%]
+tests/test_analisador_requisitos.py::test_rejeitar_requisito_vazio PASSED [ 18%]
+tests/test_analisador_requisitos.py::test_rejeitar_valor_que_nao_seja_texto PASSED [ 22%]
+tests/test_carrinho.py::test_carrinho_inicia_vazio PASSED                [ 25%]
+tests/test_carrinho.py::test_adicionar_produto PASSED                    [ 29%]
+tests/test_carrinho.py::test_calcular_total_de_dois_produtos PASSED      [ 33%]
+tests/test_carrinho.py::test_impedir_pedido_com_carrinho_vazio PASSED    [ 37%]
+tests/test_carrinho.py::test_finalizar_pedido_com_produto PASSED         [ 40%]
+tests/test_gerador_cenarios.py::test_gerar_tres_cenarios PASSED          [ 44%]
+tests/test_gerador_cenarios.py::test_cenarios_contem_categorias_esperadas PASSED [ 48%]
+tests/test_gerador_cenarios.py::test_cenarios_contem_campos_obrigatorios PASSED [ 51%]
+tests/test_gerador_cenarios.py::test_requisito_e_preservado PASSED       [ 55%]
+tests/test_gerador_cenarios.py::test_rejeitar_requisito_vazio PASSED     [ 59%]
+tests/test_gerador_cenarios.py::test_rejeitar_valor_que_nao_seja_texto PASSED [ 62%]
+tests/test_interface_delivery.py::test_pagina_delivery_abre_corretamente PASSED [ 66%]
 tests/test_interface_delivery.py::test_carrinho_inicia_vazio_na_interface PASSED [ 70%]
-tests/test_interface_delivery.py::test_adicionar_produto_atualiza_carrinho PASSED [ 80%]
-tests/test_interface_delivery.py::test_impedir_finalizacao_com_carrinho_vazio PASSED [ 90%]
-tests/test_interface_delivery.py::test_finalizar_pedido_com_produto PASSED [100%]
+tests/test_interface_delivery.py::test_adicionar_produto_atualiza_carrinho PASSED [ 74%]
+tests/test_interface_delivery.py::test_impedir_finalizacao_com_carrinho_vazio PASSED [ 77%]
+tests/test_interface_delivery.py::test_finalizar_pedido_com_produto PASSED [ 81%]
+tests/test_prompts.py::test_gerar_prompt_com_requisito_valido PASSED     [ 85%]
+tests/test_prompts.py::test_prompt_contem_categorias_de_testes PASSED    [ 88%]
+tests/test_prompts.py::test_prompt_contem_estrutura_dos_casos_de_teste PASSED [ 92%]
+tests/test_prompts.py::test_rejeitar_requisito_vazio PASSED              [ 96%]
+tests/test_prompts.py::test_rejeitar_valor_que_nao_seja_texto PASSED     [100%]
 
-============================== 10 passed in 8.02s ==============================
+============================== 27 passed in 7.35s ==============================
