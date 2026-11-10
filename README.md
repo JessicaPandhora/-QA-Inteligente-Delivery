@@ -86,15 +86,27 @@ Realiza uma análise inicial dos requisitos, identificando:
 
 Nesta etapa, a análise utiliza regras implementadas em Python. A integração com IA generativa será uma evolução futura.
 
+### 6. Módulo de validação de cenários
+
+Arquivo: `ia/validador_cenarios.py`
+
+Valida a estrutura e a consistência dos cenários gerados, verificando campos obrigatórios, identificadores, categorias, prioridades e quantidades informadas.
+
+### 7. Módulo de relatório de QA
+
+Arquivo: `ia/relatorio_qa.py`
+
+Reúne os resultados da análise de requisitos, da geração e da validação de cenários. Produz um relatório consolidado e permite exportá-lo nos formatos TXT e JSON.
+
 ## Resultados dos testes
 
 Última execução completa registrada em 10/11/2026:
 
-- Total de testes executados: 27.
-- Testes aprovados: 27.
+- Total de testes executados: 56.
+- Testes aprovados: 56.
 - Testes reprovados: 0.
-- Resultado: 27 passed.
-- Tempo de execução: 7,34 segundos.
+- Resultado: 56 passed.
+- Tempo de execução: 8,42 segundos.
 
 ### Distribuição dos testes
 
@@ -103,11 +115,13 @@ Nesta etapa, a análise utiliza regras implementadas em Python. A integração c
 | Testes do carrinho | 5 |
 | Testes de interface | 5 |
 | Testes de prompts | 5 |
-| Testes do gerador de cenários | 6 |
-| Testes do analisador de requisitos | 6 |
-| **Total** | **27** |
+| Testes do gerador de cenários | 12 |
+| Testes do analisador de requisitos | 12 |
+| Testes do relatório QA | 10 |
+| Testes do validador de cenários | 7 |
+| **Total** | **56** |
 
-**Status da última execução: todos os 27 testes aprovados.**
+**Status da última execução: todos os 56 testes aprovados.**
 
 ## Evidências
 
@@ -167,7 +181,13 @@ QA-Inteligente-Delivery/
 │   ├── __init__.py
 │   ├── prompts.py
 │   ├── gerador_cenarios.py
-│   └── analisador_requisitos.py
+│   ├── analisador_requisitos.py
+│   ├── validador_cenarios.py
+│   └── relatorio_qa.py
+│
+├── relatorios/
+│   ├── relatorio_qa.txt
+│   └── relatorio_qa.json
 │
 ├── documentacao/
 │   └── uso_ia_qualidade_testes.md
@@ -181,7 +201,9 @@ QA-Inteligente-Delivery/
 │   ├── test_interface_delivery.py
 │   ├── test_prompts.py
 │   ├── test_gerador_cenarios.py
-│   └── test_analisador_requisitos.py
+│   ├── test_analisador_requisitos.py
+│   ├── test_validador_cenarios.py
+│   └── test_relatorio_qa.py
 │
 ├── .gitignore
 └── README.md

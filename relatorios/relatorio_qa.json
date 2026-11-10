@@ -1,0 +1,79 @@
+{
+    "requisito": "O sistema deve permitir realizar pedidos.",
+    "analise": {
+        "requisito": "O sistema deve permitir realizar pedidos.",
+        "status": "necessita_revisao",
+        "total_problemas": 1,
+        "problemas": [
+            "O requisito não apresenta critérios verificáveis para orientar os testes."
+        ],
+        "recomendacoes": [
+            "Definir condições, dados obrigatórios, regras de negócio e resultados esperados."
+        ]
+    },
+    "geracao": {
+        "requisito": "O sistema deve permitir realizar pedidos.",
+        "prompt": "\nVocê é um profissional especialista em Quality Assurance (QA).\n\nAnalise cuidadosamente o requisito informado e elabore casos\nde teste completos e objetivos.\n\nREQUISITO:\nO sistema deve permitir realizar pedidos.\n\nGere cenários das seguintes categorias:\n\n1. Testes positivos: verificam comportamentos esperados.\n2. Testes negativos: verificam situações inválidas ou erros.\n3. Testes de limite: verificam valores mínimos, máximos e extremos.\n\nPara cada caso de teste, informe:\n\n- ID do teste\n- Título\n- Categoria\n- Pré-condições\n- Passos para execução\n- Resultado esperado\n- Prioridade (Alta, Média ou Baixa)\n\nNão invente funcionalidades que não estejam fundamentadas\nno requisito. Quando faltar informação, indique a dúvida.\n\nApresente o resultado de forma organizada e estruturada.\n",
+        "total_cenarios": 3,
+        "cenarios": [
+            {
+                "id": "CT001",
+                "titulo": "Validar realização de pedido",
+                "categoria": "positivo",
+                "pre_condicoes": [
+                    "Sistema disponível."
+                ],
+                "passos": [
+                    "Acessar a funcionalidade de pedidos.",
+                    "Informar os dados necessários.",
+                    "Solicitar a realização do pedido."
+                ],
+                "resultado_esperado": "O sistema deve processar o pedido conforme o requisito.",
+                "prioridade": "Alta"
+            },
+            {
+                "id": "CT002",
+                "titulo": "Validar tentativa de pedido inválido",
+                "categoria": "negativo",
+                "pre_condicoes": [
+                    "Sistema disponível."
+                ],
+                "passos": [
+                    "Acessar a funcionalidade de pedidos.",
+                    "Informar dados inválidos ou incompletos.",
+                    "Tentar realizar o pedido."
+                ],
+                "resultado_esperado": "O sistema deve tratar adequadamente os dados inválidos.",
+                "prioridade": "Alta"
+            },
+            {
+                "id": "CT003",
+                "titulo": "Validar limites na realização de pedidos",
+                "categoria": "limite",
+                "pre_condicoes": [
+                    "Sistema disponível."
+                ],
+                "passos": [
+                    "Acessar a funcionalidade de pedidos.",
+                    "Utilizar valores nos limites permitidos.",
+                    "Verificar o resultado da operação."
+                ],
+                "resultado_esperado": "O sistema deve respeitar os limites definidos para o pedido.",
+                "prioridade": "Média"
+            }
+        ],
+        "validacao": {
+            "valido": true,
+            "total_erros": 0,
+            "erros": []
+        }
+    },
+    "resumo": {
+        "status_requisito": "necessita_revisao",
+        "total_problemas": 1,
+        "total_cenarios": 3,
+        "total_erros_validacao": 0,
+        "status_validacao": "VALIDO"
+    },
+    "texto": "RELATORIO DE QUALIDADE DE SOFTWARE\n========================================\n\nREQUISITO ANALISADO:\nO sistema deve permitir realizar pedidos.\n\nANALISE DO REQUISITO:\nStatus: necessita_revisao\nTotal de problemas: 1\n\nPROBLEMAS IDENTIFICADOS:\n- O requisito não apresenta critérios verificáveis para orientar os testes.\n\nRECOMENDACOES:\n- Definir condições, dados obrigatórios, regras de negócio e resultados esperados.\n\nCENARIOS DE TESTE:\n\nID: CT001\nTitulo: Validar realização de pedido\nCategoria: positivo\nPrioridade: Alta\nPre-condicoes: Sistema disponível.\nPassos: Acessar a funcionalidade de pedidos.; Informar os dados necessários.; Solicitar a realização do pedido.\nResultado esperado: O sistema deve processar o pedido conforme o requisito.\n\nID: CT002\nTitulo: Validar tentativa de pedido inválido\nCategoria: negativo\nPrioridade: Alta\nPre-condicoes: Sistema disponível.\nPassos: Acessar a funcionalidade de pedidos.; Informar dados inválidos ou incompletos.; Tentar realizar o pedido.\nResultado esperado: O sistema deve tratar adequadamente os dados inválidos.\n\nID: CT003\nTitulo: Validar limites na realização de pedidos\nCategoria: limite\nPrioridade: Média\nPre-condicoes: Sistema disponível.\nPassos: Acessar a funcionalidade de pedidos.; Utilizar valores nos limites permitidos.; Verificar o resultado da operação.\nResultado esperado: O sistema deve respeitar os limites definidos para o pedido.\n\nVALIDACAO DOS CENARIOS:\nStatus: VALIDO\nTotal de erros: 0\n- Nenhum erro encontrado.\n\nRESUMO:\nProblemas no requisito: 1\nCenarios gerados: 3\nErros de validacao: 0\nStatus da validacao: VALIDO"
+}

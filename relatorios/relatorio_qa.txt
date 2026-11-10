@@ -1,0 +1,52 @@
+RELATORIO DE QUALIDADE DE SOFTWARE
+========================================
+
+REQUISITO ANALISADO:
+O sistema deve permitir realizar pedidos.
+
+ANALISE DO REQUISITO:
+Status: necessita_revisao
+Total de problemas: 1
+
+PROBLEMAS IDENTIFICADOS:
+- O requisito não apresenta critérios verificáveis para orientar os testes.
+
+RECOMENDACOES:
+- Definir condições, dados obrigatórios, regras de negócio e resultados esperados.
+
+CENARIOS DE TESTE:
+
+ID: CT001
+Titulo: Validar realização de pedido
+Categoria: positivo
+Prioridade: Alta
+Pre-condicoes: Sistema disponível.
+Passos: Acessar a funcionalidade de pedidos.; Informar os dados necessários.; Solicitar a realização do pedido.
+Resultado esperado: O sistema deve processar o pedido conforme o requisito.
+
+ID: CT002
+Titulo: Validar tentativa de pedido inválido
+Categoria: negativo
+Prioridade: Alta
+Pre-condicoes: Sistema disponível.
+Passos: Acessar a funcionalidade de pedidos.; Informar dados inválidos ou incompletos.; Tentar realizar o pedido.
+Resultado esperado: O sistema deve tratar adequadamente os dados inválidos.
+
+ID: CT003
+Titulo: Validar limites na realização de pedidos
+Categoria: limite
+Prioridade: Média
+Pre-condicoes: Sistema disponível.
+Passos: Acessar a funcionalidade de pedidos.; Utilizar valores nos limites permitidos.; Verificar o resultado da operação.
+Resultado esperado: O sistema deve respeitar os limites definidos para o pedido.
+
+VALIDACAO DOS CENARIOS:
+Status: VALIDO
+Total de erros: 0
+- Nenhum erro encontrado.
+
+RESUMO:
+Problemas no requisito: 1
+Cenarios gerados: 3
+Erros de validacao: 0
+Status da validacao: VALIDO

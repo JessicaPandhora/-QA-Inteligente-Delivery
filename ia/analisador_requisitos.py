@@ -1,3 +1,6 @@
+import re
+
+
 def analisar_requisito(requisito: str) -> dict:
     """
     Analisa um requisito e identifica possíveis ambiguidades
@@ -33,10 +36,16 @@ def analisar_requisito(requisito: str) -> dict:
 
     requisito_minusculo = requisito.lower()
 
-    termos_encontrados = [
-        termo for termo in termos_vagos
-        if termo in requisito_minusculo
-    ]
+    termos_encontrados = []
+
+    for termo in termos_vagos:
+        partes = termo.split()
+        padrao = r"(?<!\w)" + r"\s+".join(
+            re.escape(parte) for parte in partes
+        ) + r"(?!\w)"
+
+        if re.search(padrao, requisito_minusculo):
+            termos_encontrados.append(termo)
 
     if termos_encontrados:
         problemas.append(
@@ -52,12 +61,17 @@ def analisar_requisito(requisito: str) -> dict:
         "deverá",
         "precisa",
         "permitir",
+        "permite",
+        "permitem",
         "impedir",
         "possibilitar"
     ]
 
     possui_acao = any(
-        palavra in requisito_minusculo.split()
+        re.search(
+            r"(?<!\w)" + re.escape(palavra) + r"(?!\w)",
+            requisito_minusculo
+        )
         for palavra in palavras_de_acao
     )
 
@@ -75,6 +89,43 @@ def analisar_requisito(requisito: str) -> dict:
         )
         recomendacoes.append(
             "Adicionar contexto, condições e resultados esperados."
+        )
+
+    expressoes_genericas = [
+        "realizar pedidos",
+        "efetuar operações",
+        "processar solicitações",
+        "gerenciar cadastros"
+    ]
+
+    possui_expressao_generica = any(
+        expressao in requisito_minusculo
+        for expressao in expressoes_genericas
+    )
+
+    possui_criterios = any(
+        termo in requisito_minusculo
+        for termo in [
+            "quando",
+            "desde que",
+            "somente se",
+            "com ",
+            "sem ",
+            "maior que",
+            "menor que",
+            "igual a",
+            "mínimo",
+            "máximo",
+            "obrigatório"
+        ]
+    )
+
+    if possui_expressao_generica and not possui_criterios:
+        problemas.append(
+            "O requisito não apresenta critérios verificáveis para orientar os testes."
+        )
+        recomendacoes.append(
+            "Definir condições, dados obrigatórios, regras de negócio e resultados esperados."
         )
 
     if problemas:
