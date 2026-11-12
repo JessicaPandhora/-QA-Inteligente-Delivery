@@ -62,4 +62,4 @@ tests/test_validador_cenarios.py::test_identificar_categoria_invalida PASSED [ 9
 tests/test_validador_cenarios.py::test_identificar_prioridade_invalida PASSED [ 98%]
 tests/test_validador_cenarios.py::test_identificar_total_de_cenarios_incorreto PASSED [100%]
 
-============================== 56 passed in 8.42s ==============================
+============================== 56 passed in 8.35s ==============================
